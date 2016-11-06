@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+*.apk
+*.jar
+*.war
+*.ear
+*.class
+.mtj.tmp
+hs_err_pid
+

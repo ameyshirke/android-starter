@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android Starter</string>
+
+    <string name="server_error">Error!</string>
+    <string name="server_error_msg">We were unable to connect you at this point of time. Please try again later.</string>
+
+</resources>
