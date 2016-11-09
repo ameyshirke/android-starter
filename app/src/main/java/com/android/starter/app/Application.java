@@ -8,10 +8,26 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Application extends android.app.Application {
 
+    public static final String TAG = Application.class.getSimpleName();
+
+    private static boolean activityVisible;
+
     private static TestService testService;
 
     public static TestService getTestService() {
         return testService;
+    }
+
+    public static boolean isActivityVisible() {
+        return activityVisible;
+    }
+
+    public static void activityResumed() {
+        activityVisible = true;
+    }
+
+    public static void activityPaused() {
+        activityVisible = false;
     }
 
     @Override
@@ -24,7 +40,6 @@ public class Application extends android.app.Application {
                 .client(client)
                 .baseUrl(Constants.BASE_URL.getValue())
                 .addCallAdapterFactory(new ErrorHandlingCallAdapterFactory())
-//                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
